@@ -57,9 +57,6 @@ class TimelineTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 50))
-//        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "customSectionHeader") as! CustomSectionHeader
-//        headerView.titleLabel.text = "test"
-//        headerView.subtitleLabel.text = ""
         
         let label = UILabel()
         label.frame = CGRect.init(x: 20.0, y: 5, width: headerView.frame.width-10, height: headerView.frame.height-10)
