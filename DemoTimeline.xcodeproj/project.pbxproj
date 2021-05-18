@@ -9,12 +9,15 @@
 /* Begin PBXBuildFile section */
 		49ACBED42653B4D90034C69D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ACBED32653B4D90034C69D /* AppDelegate.swift */; };
 		49ACBED62653B4D90034C69D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ACBED52653B4D90034C69D /* SceneDelegate.swift */; };
-		49ACBED82653B4D90034C69D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ACBED72653B4D90034C69D /* ViewController.swift */; };
 		49ACBEDB2653B4D90034C69D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49ACBED92653B4D90034C69D /* Main.storyboard */; };
 		49ACBEDD2653B4DB0034C69D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49ACBEDC2653B4DB0034C69D /* Assets.xcassets */; };
 		49ACBEE02653B4DB0034C69D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49ACBEDE2653B4DB0034C69D /* LaunchScreen.storyboard */; };
 		49ACBEEB2653B4DB0034C69D /* DemoTimelineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ACBEEA2653B4DB0034C69D /* DemoTimelineTests.swift */; };
 		49ACBEF62653B4DB0034C69D /* DemoTimelineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ACBEF52653B4DB0034C69D /* DemoTimelineUITests.swift */; };
+		49ACBF082653B6E60034C69D /* TimelineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ACBF062653B6E60034C69D /* TimelineTableViewCell.swift */; };
+		49ACBF092653B6E60034C69D /* TimelineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49ACBF072653B6E60034C69D /* TimelineTableViewCell.xib */; };
+		49ACBF0B2653B6F30034C69D /* TimelineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ACBF0A2653B6F30034C69D /* TimelineTableViewController.swift */; };
+		49ACBF0D2653B7110034C69D /* FeaturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ACBF0C2653B7110034C69D /* FeaturesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +41,6 @@
 		49ACBED02653B4D90034C69D /* DemoTimeline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoTimeline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49ACBED32653B4D90034C69D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49ACBED52653B4D90034C69D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		49ACBED72653B4D90034C69D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		49ACBEDA2653B4D90034C69D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		49ACBEDC2653B4DB0034C69D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49ACBEDF2653B4DB0034C69D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +51,10 @@
 		49ACBEF12653B4DB0034C69D /* DemoTimelineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoTimelineUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49ACBEF52653B4DB0034C69D /* DemoTimelineUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTimelineUITests.swift; sourceTree = "<group>"; };
 		49ACBEF72653B4DB0034C69D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49ACBF062653B6E60034C69D /* TimelineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineTableViewCell.swift; sourceTree = "<group>"; };
+		49ACBF072653B6E60034C69D /* TimelineTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimelineTableViewCell.xib; sourceTree = "<group>"; };
+		49ACBF0A2653B6F30034C69D /* TimelineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineTableViewController.swift; sourceTree = "<group>"; };
+		49ACBF0C2653B7110034C69D /* FeaturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +105,9 @@
 		49ACBED22653B4D90034C69D /* DemoTimeline */ = {
 			isa = PBXGroup;
 			children = (
-				49ACBED32653B4D90034C69D /* AppDelegate.swift */,
-				49ACBED52653B4D90034C69D /* SceneDelegate.swift */,
-				49ACBED72653B4D90034C69D /* ViewController.swift */,
-				49ACBED92653B4D90034C69D /* Main.storyboard */,
+				49ACBF032653B6A70034C69D /* Model */,
+				49ACBF042653B6AD0034C69D /* View */,
+				49ACBF052653B6B10034C69D /* Controller */,
 				49ACBEDC2653B4DB0034C69D /* Assets.xcassets */,
 				49ACBEDE2653B4DB0034C69D /* LaunchScreen.storyboard */,
 				49ACBEE12653B4DB0034C69D /* Info.plist */,
@@ -126,6 +131,34 @@
 				49ACBEF72653B4DB0034C69D /* Info.plist */,
 			);
 			path = DemoTimelineUITests;
+			sourceTree = "<group>";
+		};
+		49ACBF032653B6A70034C69D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		49ACBF042653B6AD0034C69D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				49ACBED92653B4D90034C69D /* Main.storyboard */,
+				49ACBF072653B6E60034C69D /* TimelineTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		49ACBF052653B6B10034C69D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				49ACBED32653B4D90034C69D /* AppDelegate.swift */,
+				49ACBED52653B4D90034C69D /* SceneDelegate.swift */,
+				49ACBF062653B6E60034C69D /* TimelineTableViewCell.swift */,
+				49ACBF0A2653B6F30034C69D /* TimelineTableViewController.swift */,
+				49ACBF0C2653B7110034C69D /* FeaturesViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +264,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49ACBF092653B6E60034C69D /* TimelineTableViewCell.xib in Resources */,
 				49ACBEE02653B4DB0034C69D /* LaunchScreen.storyboard in Resources */,
 				49ACBEDD2653B4DB0034C69D /* Assets.xcassets in Resources */,
 				49ACBEDB2653B4D90034C69D /* Main.storyboard in Resources */,
@@ -258,8 +292,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49ACBED82653B4D90034C69D /* ViewController.swift in Sources */,
+				49ACBF0D2653B7110034C69D /* FeaturesViewController.swift in Sources */,
 				49ACBED42653B4D90034C69D /* AppDelegate.swift in Sources */,
+				49ACBF082653B6E60034C69D /* TimelineTableViewCell.swift in Sources */,
+				49ACBF0B2653B6F30034C69D /* TimelineTableViewController.swift in Sources */,
 				49ACBED62653B4D90034C69D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
