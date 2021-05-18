@@ -17,7 +17,6 @@ class TimelineTableViewController: UITableViewController {
         Course(dateAwarded: Date.dateFromCustomString(stringDate: "03/08/2016"), courseName: "Python Course", typeCertificate: "Certificate of Completion"),
     ]
     
-//    var courseGrouped = [Int: [Course]]()
     var courseGrouped = [Dictionary<Int, [Course]>.Element]()
     
     fileprivate func groupingCourse() {
@@ -55,15 +54,11 @@ class TimelineTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // return the number of sections
-//        let year = courseGrouped.keys
-//        return year.count
         return courseGrouped.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // return the number of rows
-//        let courseByYear = Array(courseGrouped.keys)[section]
-//        return courseGrouped[courseByYear]?.count ?? 0
         return courseGrouped[section].value.count
     }
     
@@ -72,7 +67,6 @@ class TimelineTableViewController: UITableViewController {
         
         let label = UILabel()
         label.frame = CGRect.init(x: 10.0, y: 5, width: 60, height: headerView.frame.height-20)
-//        label.text = Array(courseGrouped.keys)[section].description
         label.text = courseGrouped[section].key.description
         label.font = .systemFont(ofSize: 14)
         label.textAlignment = .center
