@@ -17,20 +17,11 @@ class TimelineTableViewController: UITableViewController {
     ]
     
     var courseGrouped = [Int: [Course]]()
-    var testGrouped = [[Course]]()
     
     fileprivate func groupingCourse() {
         courseGrouped = Dictionary(grouping: courseArray) { (element) -> Int in
             return element.dateAwarded.year
         }
-        
-        let sortedKeys = courseGrouped.keys.sorted()
-        sortedKeys.forEach { (key) in
-            let values = courseGrouped[key]
-            testGrouped.append(values ?? [])
-        }
-        
-        print(testGrouped)
     }
     
     override func viewDidLoad() {
@@ -49,16 +40,13 @@ class TimelineTableViewController: UITableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         // return the number of sections
         let year = courseGrouped.keys
-        
         return year.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // return the number of rows
-        let course = Array(courseGrouped.keys)[section]
-        return courseGrouped[course]?.count ?? 0
-        
-//        return testArray.count
+        let courseByYear = Array(courseGrouped.keys)[section]
+        return courseGrouped[courseByYear]?.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
