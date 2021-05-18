@@ -154,8 +154,8 @@
 			children = (
 				49ACBED32653B4D90034C69D /* AppDelegate.swift */,
 				49ACBED52653B4D90034C69D /* SceneDelegate.swift */,
-				49ACBF062653B6E60034C69D /* TimelineTableViewCell.swift */,
 				49ACBF0A2653B6F30034C69D /* TimelineTableViewController.swift */,
+				49ACBF062653B6E60034C69D /* TimelineTableViewCell.swift */,
 				49ACBF0C2653B7110034C69D /* FeaturesViewController.swift */,
 			);
 			path = Controller;
