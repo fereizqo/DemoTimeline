@@ -44,7 +44,7 @@ class TimelineTableViewCell: UITableViewCell {
         
         var startPoint = CGPoint()
         if currentIndexPath.row == 0 {
-            startPoint = CGPoint(x: offSet, y: self.bounds.midY)
+            startPoint = CGPoint(x: offSet, y: 0)
         } else {
             startPoint = CGPoint(x: offSet, y: 0)
         }

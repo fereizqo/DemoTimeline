@@ -109,6 +109,7 @@
 		49ACBED22653B4D90034C69D /* DemoTimeline */ = {
 			isa = PBXGroup;
 			children = (
+				49ACBF122653F9A30034C69D /* Helper */,
 				49ACBF032653B6A70034C69D /* Model */,
 				49ACBF042653B6AD0034C69D /* View */,
 				49ACBF052653B6B10034C69D /* Controller */,
@@ -157,7 +158,6 @@
 		49ACBF052653B6B10034C69D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				49ACBF102653D1530034C69D /* Extension.swift */,
 				49ACBED32653B4D90034C69D /* AppDelegate.swift */,
 				49ACBED52653B4D90034C69D /* SceneDelegate.swift */,
 				49ACBF0A2653B6F30034C69D /* TimelineTableViewController.swift */,
@@ -165,6 +165,14 @@
 				49ACBF0C2653B7110034C69D /* FeaturesViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		49ACBF122653F9A30034C69D /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				49ACBF102653D1530034C69D /* Extension.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
