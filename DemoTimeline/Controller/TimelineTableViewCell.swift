@@ -11,7 +11,7 @@ class TimelineTableViewCell: UITableViewCell {
     
     var allRows = Int()
     var currentIndexPath = IndexPath()
-    let offSet: CGFloat = 20.0
+    let offSet: CGFloat = 40.0
     let circleRadius: CGFloat = 5.0
 
     @IBOutlet weak var typeCertificateLabel: UILabel!

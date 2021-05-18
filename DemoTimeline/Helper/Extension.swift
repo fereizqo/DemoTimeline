@@ -14,12 +14,6 @@ extension Date {
         return dateFormatter.date(from: stringDate) ?? Date()
     }
     
-//    static func stringFromCustomDate(date: Date) -> String {
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = "dd-MM-yyyy"
-//        return dateFormatter.string(from: self)
-//    }
-    
     func toString(format: String = "dd-MM-yyyy") -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format
