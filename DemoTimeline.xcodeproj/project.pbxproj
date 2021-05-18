@@ -18,6 +18,8 @@
 		49ACBF092653B6E60034C69D /* TimelineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49ACBF072653B6E60034C69D /* TimelineTableViewCell.xib */; };
 		49ACBF0B2653B6F30034C69D /* TimelineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ACBF0A2653B6F30034C69D /* TimelineTableViewController.swift */; };
 		49ACBF0D2653B7110034C69D /* FeaturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ACBF0C2653B7110034C69D /* FeaturesViewController.swift */; };
+		49ACBF0F2653CABE0034C69D /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ACBF0E2653CABE0034C69D /* Course.swift */; };
+		49ACBF112653D1530034C69D /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ACBF102653D1530034C69D /* Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		49ACBF072653B6E60034C69D /* TimelineTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimelineTableViewCell.xib; sourceTree = "<group>"; };
 		49ACBF0A2653B6F30034C69D /* TimelineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineTableViewController.swift; sourceTree = "<group>"; };
 		49ACBF0C2653B7110034C69D /* FeaturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesViewController.swift; sourceTree = "<group>"; };
+		49ACBF0E2653CABE0034C69D /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		49ACBF102653D1530034C69D /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +140,7 @@
 		49ACBF032653B6A70034C69D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				49ACBF0E2653CABE0034C69D /* Course.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -152,6 +157,7 @@
 		49ACBF052653B6B10034C69D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				49ACBF102653D1530034C69D /* Extension.swift */,
 				49ACBED32653B4D90034C69D /* AppDelegate.swift */,
 				49ACBED52653B4D90034C69D /* SceneDelegate.swift */,
 				49ACBF0A2653B6F30034C69D /* TimelineTableViewController.swift */,
@@ -292,7 +298,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49ACBF0F2653CABE0034C69D /* Course.swift in Sources */,
 				49ACBF0D2653B7110034C69D /* FeaturesViewController.swift in Sources */,
+				49ACBF112653D1530034C69D /* Extension.swift in Sources */,
 				49ACBED42653B4D90034C69D /* AppDelegate.swift in Sources */,
 				49ACBF082653B6E60034C69D /* TimelineTableViewCell.swift in Sources */,
 				49ACBF0B2653B6F30034C69D /* TimelineTableViewController.swift in Sources */,
