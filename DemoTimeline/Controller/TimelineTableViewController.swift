@@ -103,7 +103,7 @@ class TimelineTableViewController: UITableViewController {
             
             // Gray color
             cell.dateAwardedLabel.textColor = UIColor.darkGray
-            cell.dateAwardedLabel.text = "Awarded on: ....."
+            cell.dateAwardedLabel.text = "Awarded on: \(course.dateAwarded.toString())"
         }
 
         return cell

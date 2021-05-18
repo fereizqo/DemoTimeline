@@ -17,11 +17,13 @@ class TimelineTableViewCell: UITableViewCell {
     @IBOutlet weak var typeCertificateLabel: UILabel!
     @IBOutlet weak var courseNameLabel: UILabel!
     @IBOutlet weak var dateAwardedLabel: UILabel!
+    @IBOutlet weak var backView: UIView!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
+        backView.layer.cornerRadius = 5
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
