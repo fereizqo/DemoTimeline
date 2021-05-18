@@ -14,9 +14,14 @@ class TimelineTableViewCell: UITableViewCell {
     let offSet: CGFloat = 20.0
     let circleRadius: CGFloat = 5.0
 
+    @IBOutlet weak var typeCertificateLabel: UILabel!
+    @IBOutlet weak var courseNameLabel: UILabel!
+    @IBOutlet weak var dateAwardedLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

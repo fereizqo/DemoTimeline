@@ -64,10 +64,6 @@ class TimelineTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 50))
         
-//        let division = Array(salesGroupedByDivision.keys)[section]
-//        print("\(division) \(salesGroupedByDivision[division]?.reduce(0, { $0 + $1.saleAmount }) ?? 0)")
-        
-        
         let label = UILabel()
         label.frame = CGRect.init(x: 20.0, y: 5, width: headerView.frame.width-10, height: headerView.frame.height-10)
         label.text = Array(courseGrouped.keys)[section].description
@@ -105,11 +101,24 @@ class TimelineTableViewController: UITableViewController {
         // Configure the cell
         cell.allRows = testArray.count
         cell.currentIndexPath = indexPath
+        
+        let courseByYear = Array(courseGrouped.keys)[indexPath.section]
+        if let course = courseGrouped[courseByYear]?[indexPath.row] {
+            // Underline style
+            let attributedCourseString = NSMutableAttributedString.init(string: course.typeCertificate)
+            attributedCourseString.addAttribute(NSAttributedString.Key.underlineStyle, value: 1, range: NSRange.init(location: 0, length: attributedCourseString.length))
+            cell.typeCertificateLabel.attributedText = attributedCourseString
+            
+            // Bold style
+            cell.courseNameLabel.font = UIFont.boldSystemFont(ofSize: cell.courseNameLabel.font.pointSize)
+            cell.courseNameLabel.text = course.courseName
+            
+            // Gray color
+            cell.dateAwardedLabel.textColor = UIColor.darkGray
+            cell.dateAwardedLabel.text = "Awarded on: ....."
+        }
 
         return cell
     }
     
-    func createLine(path: UIBezierPath) {
-        
-    }
 }
