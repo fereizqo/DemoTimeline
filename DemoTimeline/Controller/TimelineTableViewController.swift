@@ -14,7 +14,7 @@ class TimelineTableViewController: UITableViewController {
     let courseArray = [
         Course(dateAwarded: Date.dateFromCustomString(stringDate: "03/08/2020"), courseName: "Swift Course 2", typeCertificate: "Certificate of Completion"),
         Course(dateAwarded: Date.dateFromCustomString(stringDate: "03/06/2018"), courseName: "Swift Course 1", typeCertificate: "Certificate of Completion"),
-        Course(dateAwarded: Date.dateFromCustomString(stringDate: "03/08/2016"), courseName: "Python Course", typeCertificate: "Certificate of Completion"),
+        Course(dateAwarded: Date.dateFromCustomString(stringDate: "03/08/2014"), courseName: "Python Course", typeCertificate: "Certificate of Completion"),
     ]
     
     var courseGrouped = [Dictionary<Int, [Course]>.Element]()
@@ -35,7 +35,9 @@ class TimelineTableViewController: UITableViewController {
         
         let sortedYourArray = coursesGrouped.sorted( by: { $0.0 > $1.0 })
         courseGrouped = sortedYourArray
-        print(courseGrouped)
+        
+        
+        print(courseGrouped[1].value.isEmpty)
     }
     
     override func viewDidLoad() {
@@ -62,18 +64,31 @@ class TimelineTableViewController: UITableViewController {
         return courseGrouped[section].value.count
     }
     
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 45
+    }
+    
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 50))
         
         let label = UILabel()
-        label.frame = CGRect.init(x: 10.0, y: 5, width: 60, height: headerView.frame.height-20)
         label.text = courseGrouped[section].key.description
-        label.font = .systemFont(ofSize: 14)
         label.textAlignment = .center
-        label.backgroundColor = UIColor.brown
         label.layer.cornerRadius = 5
         label.layer.masksToBounds = true
-        label.textColor = .black
+        
+        if courseGrouped[section].value.isEmpty {
+            label.frame = CGRect.init(x: 15, y: 5, width: 50, height: headerView.frame.height-25)
+            label.font = .boldSystemFont(ofSize: 12)
+            label.backgroundColor = UIColor.systemGray5
+            label.textColor = UIColor.darkGray
+            
+        } else {
+            label.frame = CGRect.init(x: 10.0, y: 5, width: 60, height: headerView.frame.height-20)
+            label.font = .boldSystemFont(ofSize: 14)
+            label.backgroundColor = #colorLiteral(red: 0.9943941236, green: 0.9069606066, blue: 0.9247472882, alpha: 1)
+            label.textColor = .black
+        }
         
         headerView.addSubview(label)
         
