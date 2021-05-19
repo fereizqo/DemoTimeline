@@ -31,8 +31,10 @@ class TimelineTableViewController: UITableViewController {
             return element.dateAwarded.year
         }
         
+        // Find and fill the gap in the year array
         let yearArray = Array(coursesGrouped.keys)
-        let yearFilledArray = Array(yearArray.min()!...yearArray.max()!)
+        guard let maxYear = yearArray.max() , let minYear = yearArray.min() else { return }
+        let yearFilledArray = Array(minYear...maxYear)
         
         for i in yearFilledArray {
             if !yearArray.contains(i) {
@@ -40,6 +42,7 @@ class TimelineTableViewController: UITableViewController {
             }
         }
         
+        // Sorting course by year
         let sortedYourArray = coursesGrouped.sorted( by: { $0.0 > $1.0 })
         courseGrouped = sortedYourArray
     }
@@ -79,6 +82,7 @@ class TimelineTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 50))
         
+        // Create year label
         let label = UILabel()
         label.text = courseGrouped[section].key.description
         label.textAlignment = .center
@@ -100,6 +104,7 @@ class TimelineTableViewController: UITableViewController {
         
         headerView.addSubview(label)
         
+        // Create line for the timeline
         let linePath = UIBezierPath()
         var startPoint = CGPoint()
         var endPoint = CGPoint()
@@ -111,6 +116,7 @@ class TimelineTableViewController: UITableViewController {
         }
         
         endPoint = CGPoint(x: offsetTimeline, y: 45)
+        
         linePath.move(to: startPoint)
         linePath.addLine(to: endPoint)
         
@@ -119,6 +125,7 @@ class TimelineTableViewController: UITableViewController {
         shapeLayer.lineWidth = 2.0
         shapeLayer.lineCap = .butt
         shapeLayer.strokeColor = UIColor.systemGray2.cgColor
+        
         headerView.layer.insertSublayer(shapeLayer, at: 0)
         
         return headerView

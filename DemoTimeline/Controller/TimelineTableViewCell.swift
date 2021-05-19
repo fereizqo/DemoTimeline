@@ -11,7 +11,7 @@ class TimelineTableViewCell: UITableViewCell {
     
     var countRowSection: (row: Int, section:Int)?
     var currentIndexPath = IndexPath()
-    let offSet: CGFloat = 40.0
+    let offsetTimeline: CGFloat = 40.0
     let circleRadius: CGFloat = 5.0
 
     @IBOutlet weak var typeCertificateLabel: UILabel!
@@ -36,26 +36,22 @@ class TimelineTableViewCell: UITableViewCell {
         super.draw(rect)
         
         // Create the circle
-        let circlePath = UIBezierPath(arcCenter: CGPoint(x: offSet, y: self.bounds.midY), radius: CGFloat(circleRadius), startAngle: CGFloat(0), endAngle: CGFloat(Double.pi * 2), clockwise: true)
+        let circlePath = UIBezierPath(arcCenter: CGPoint(x: offsetTimeline, y: self.bounds.midY), radius: CGFloat(circleRadius), startAngle: CGFloat(0), endAngle: CGFloat(Double.pi * 2), clockwise: true)
         createCircle(path: circlePath)
         
         // Create the line
         let linePath = UIBezierPath()
-        
         var startPoint = CGPoint()
-        if currentIndexPath.row == 0 {
-            startPoint = CGPoint(x: offSet, y: 0)
-        } else {
-            startPoint = CGPoint(x: offSet, y: 0)
-        }
+        var endPoint = CGPoint()
+        
+        startPoint = CGPoint(x: offsetTimeline, y: 0)
         linePath.move(to: startPoint)
         
-        var endPoint = CGPoint()
         if let count = countRowSection {
             if currentIndexPath.row == count.row - 1 && currentIndexPath.section == count.section - 1 {
-                endPoint = CGPoint(x: offSet, y: self.bounds.midY)
+                endPoint = CGPoint(x: offsetTimeline, y: self.bounds.midY)
             } else {
-                endPoint = CGPoint(x: offSet, y: self.bounds.maxY)
+                endPoint = CGPoint(x: offsetTimeline, y: self.bounds.maxY)
             }
             
         }
