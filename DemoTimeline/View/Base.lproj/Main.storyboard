@@ -11,18 +11,60 @@
         <!--Features-->
         <scene sceneID="WWY-I4-LXw">
             <objects>
-                <viewController id="gqQ-75-HFl" sceneMemberID="viewController">
+                <viewController id="gqQ-75-HFl" customClass="FeaturesViewController" customModule="DemoTimeline" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QRL-Be-CU3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Tr8-7v-YyE">
+                                <rect key="frame" x="0.0" y="124" width="414" height="136"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="136" id="DkN-SA-3ch"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Otz-qS-rEY">
+                                    <size key="itemSize" width="414" height="117"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="NIs-AQ-y6e">
+                                <rect key="frame" x="146" y="232" width="122" height="28"/>
+                                <color key="pageIndicatorTintColor" systemColor="systemOrangeColor"/>
+                                <color key="currentPageIndicatorTintColor" systemColor="systemPinkColor"/>
+                            </pageControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Features" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nYK-Xp-Jnt">
+                                <rect key="frame" x="20" y="79" width="94" height="30"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="g1E-GV-A9W"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nYK-Xp-Jnt" firstAttribute="leading" secondItem="g1E-GV-A9W" secondAttribute="leading" constant="20" id="6jP-PF-heY"/>
+                            <constraint firstItem="Tr8-7v-YyE" firstAttribute="trailing" secondItem="g1E-GV-A9W" secondAttribute="trailing" id="Nc3-kb-ITW"/>
+                            <constraint firstItem="g1E-GV-A9W" firstAttribute="trailing" secondItem="nYK-Xp-Jnt" secondAttribute="trailing" constant="300" id="Qmb-1a-y7J"/>
+                            <constraint firstItem="Tr8-7v-YyE" firstAttribute="top" secondItem="g1E-GV-A9W" secondAttribute="top" constant="80" id="UFr-OP-kKV"/>
+                            <constraint firstItem="NIs-AQ-y6e" firstAttribute="bottom" secondItem="Tr8-7v-YyE" secondAttribute="bottom" id="hW3-sW-7Nz"/>
+                            <constraint firstItem="NIs-AQ-y6e" firstAttribute="centerX" secondItem="QRL-Be-CU3" secondAttribute="centerX" id="mjm-vr-X09"/>
+                            <constraint firstItem="nYK-Xp-Jnt" firstAttribute="top" secondItem="g1E-GV-A9W" secondAttribute="top" constant="35" id="nSo-cW-giJ"/>
+                            <constraint firstItem="Tr8-7v-YyE" firstAttribute="leading" secondItem="g1E-GV-A9W" secondAttribute="leading" id="uBS-ZO-Ri8"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Features" id="Zpb-sn-lF7"/>
                     <navigationItem key="navigationItem" title="Features" id="fmT-gq-GPY"/>
+                    <connections>
+                        <outlet property="featuresCollectionView" destination="Tr8-7v-YyE" id="vCe-Or-sIT"/>
+                        <outlet property="featuresPageControl" destination="NIs-AQ-y6e" id="rvd-MM-Izz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btz-As-MWP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1487" y="202"/>
+            <point key="canvasLocation" x="645" y="177"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Wku-hz-JBp">
@@ -35,7 +77,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="RZx-wf-Amf" kind="relationship" relationship="viewControllers" id="iBu-oy-UQy"/>
-                        <segue destination="bBV-I7-knh" kind="relationship" relationship="viewControllers" id="iDL-Fe-cYk"/>
+                        <segue destination="gqQ-75-HFl" kind="relationship" relationship="viewControllers" id="h5W-Mn-j80"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eqN-F7-eHy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -78,29 +120,16 @@
             </objects>
             <point key="canvasLocation" x="645" y="-534"/>
         </scene>
-        <!--Features-->
-        <scene sceneID="BGs-bp-jM4">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bBV-I7-knh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Features" id="uww-K6-d6S"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gCp-cZ-Otq">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="gqQ-75-HFl" kind="relationship" relationship="rootViewController" id="Kt3-F3-SY5"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jNv-CG-3s0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="644.92753623188412" y="201.5625"/>
-        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

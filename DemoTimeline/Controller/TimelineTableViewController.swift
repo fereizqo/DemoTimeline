@@ -10,14 +10,14 @@ import UIKit
 class TimelineTableViewController: UITableViewController {
     
     let offsetTimeline = 40.0
-    let testArray = [2020, 2019, 2018]
     let courseArray = [
-//        Course(dateAwarded: Date.dateFromCustomString(stringDate: "15/02/2008"), courseName: "Microsoft Office Course", typeCertificate: "Certificate of Completion"),
+        Course(dateAwarded: Date.dateFromCustomString(stringDate: "15/10/2020"), courseName: "Swift Course 3", typeCertificate: "Certificate of Completion"),
         Course(dateAwarded: Date.dateFromCustomString(stringDate: "03/08/2020"), courseName: "Swift Course 2", typeCertificate: "Certificate of Completion"),
-        Course(dateAwarded: Date.dateFromCustomString(stringDate: "03/06/2020"), courseName: "Swift Course 1", typeCertificate: "Certificate of Completion"),
+        Course(dateAwarded: Date.dateFromCustomString(stringDate: "15/06/2020"), courseName: "Swift Course 1", typeCertificate: "Certificate of Completion"),
         Course(dateAwarded: Date.dateFromCustomString(stringDate: "03/08/2014"), courseName: "Python Course", typeCertificate: "Certificate of Completion"),
         Course(dateAwarded: Date.dateFromCustomString(stringDate: "03/06/2018"), courseName: "C# Course 1", typeCertificate: "Certificate of Completion"),
         Course(dateAwarded: Date.dateFromCustomString(stringDate: "03/08/2018"), courseName: "C# Course 2", typeCertificate: "Certificate of Completion"),
+        Course(dateAwarded: Date.dateFromCustomString(stringDate: "15/02/2008"), courseName: "Microsoft Office Course", typeCertificate: "Certificate of Completion"),
     ]
     
     var courseGrouped = [Dictionary<Int, [Course]>.Element]()
