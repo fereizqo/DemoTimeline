@@ -25,6 +25,38 @@ class TimelineTableViewCell: UITableViewCell {
         // Initialization code
         backView.layer.cornerRadius = 5
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+//        // Create the circle
+//        let circlePath = UIBezierPath(arcCenter: CGPoint(x: offsetTimeline, y: self.bounds.midY), radius: CGFloat(circleRadius), startAngle: CGFloat(0), endAngle: CGFloat(Double.pi * 2), clockwise: true)
+//        createCircle(path: circlePath)
+//
+//        // Create the line
+//        let linePath = UIBezierPath()
+//        var startPoint = CGPoint()
+//        var endPoint = CGPoint()
+//
+//        startPoint = CGPoint(x: offsetTimeline, y: 0)
+//        linePath.move(to: startPoint)
+//
+//        if let count = countRowSection {
+//            print("IndexPath row: \(currentIndexPath.row) section: \(currentIndexPath.section)")
+//            print("Inside row: \(count.row - 1) section: \(count.section - 1)")
+//            if currentIndexPath.row == count.row - 1 && currentIndexPath.section == count.section - 1 {
+//                print("boom")
+//                endPoint = CGPoint(x: offsetTimeline, y: self.bounds.midY)
+//            } else {
+//                endPoint = CGPoint(x: offsetTimeline, y: self.bounds.maxY)
+//            }
+//
+//        }
+//
+//        linePath.addLine(to: endPoint)
+//        createLine(path: linePath)
+        
+    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -35,29 +67,6 @@ class TimelineTableViewCell: UITableViewCell {
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         
-        // Create the circle
-        let circlePath = UIBezierPath(arcCenter: CGPoint(x: offsetTimeline, y: self.bounds.midY), radius: CGFloat(circleRadius), startAngle: CGFloat(0), endAngle: CGFloat(Double.pi * 2), clockwise: true)
-        createCircle(path: circlePath)
-        
-        // Create the line
-        let linePath = UIBezierPath()
-        var startPoint = CGPoint()
-        var endPoint = CGPoint()
-        
-        startPoint = CGPoint(x: offsetTimeline, y: 0)
-        linePath.move(to: startPoint)
-        
-        if let count = countRowSection {
-            if currentIndexPath.row == count.row - 1 && currentIndexPath.section == count.section - 1 {
-                endPoint = CGPoint(x: offsetTimeline, y: self.bounds.midY)
-            } else {
-                endPoint = CGPoint(x: offsetTimeline, y: self.bounds.maxY)
-            }
-            
-        }
-        linePath.addLine(to: endPoint)
-        
-        createLine(path: linePath)
     }
     
     func createCircle(path: UIBezierPath) {
@@ -76,6 +85,44 @@ class TimelineTableViewCell: UITableViewCell {
         shapeLayer.lineCap = .butt
         shapeLayer.strokeColor = UIColor.systemGray2.cgColor
         self.layer.insertSublayer(shapeLayer, at: 1)
+    }
+}
+
+extension TimelineTableViewCell {
+    func createLine(indexPath: IndexPath, maxRow: Int, maxSection: Int) {
+        // Create the circle
+        let circlePath = UIBezierPath(arcCenter: CGPoint(x: offsetTimeline, y: self.bounds.midY), radius: CGFloat(circleRadius), startAngle: CGFloat(0), endAngle: CGFloat(Double.pi * 2), clockwise: true)
+        createCircle(path: circlePath)
+        
+        // Create the line
+        let linePath = UIBezierPath()
+        var startPoint = CGPoint()
+        var endPoint = CGPoint()
+        
+        startPoint = CGPoint(x: offsetTimeline, y: 0)
+        linePath.move(to: startPoint)
+        
+        if indexPath.row == maxRow - 1 && indexPath.section == maxSection - 1 {
+            print("boom")
+            endPoint = CGPoint(x: offsetTimeline, y: self.bounds.midY)
+        } else {
+            endPoint = CGPoint(x: offsetTimeline, y: self.bounds.maxY)
+        }
+        
+//        if let count = countRowSection {
+//            print("IndexPath row: \(currentIndexPath.row) section: \(currentIndexPath.section)")
+//            print("Inside row: \(count.row - 1) section: \(count.section - 1)")
+//            if currentIndexPath.row == count.row - 1 && currentIndexPath.section == count.section - 1 {
+//                print("boom")
+//                endPoint = CGPoint(x: offsetTimeline, y: self.bounds.midY)
+//            } else {
+//                endPoint = CGPoint(x: offsetTimeline, y: self.bounds.maxY)
+//            }
+//
+//        }
+        
+        linePath.addLine(to: endPoint)
+        createLine(path: linePath)
     }
 }
 

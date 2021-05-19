@@ -135,12 +135,15 @@ class TimelineTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "TimelineTableViewCell", for: indexPath) as? TimelineTableViewCell else { return TimelineTableViewCell()}
         
         // Configure the cell
-        cell.countRowSection = (courseGrouped[indexPath.section].value.count, courseGrouped.count)
+        cell.countRowSection = (courseGrouped[courseGrouped.count-1].value.count, courseGrouped.count)
+//        cell.countRowSection = (courseGrouped[indexPath.section].value.count, courseGrouped.count)
         cell.currentIndexPath = indexPath
         
         let courseData = courseGrouped[indexPath.section].value[indexPath.row]
         cell.configure(typeCertificate: courseData.typeCertificate, courseName: courseData.courseName, dateAwarded: courseData.dateAwarded)
         
+        cell.createLine(indexPath: indexPath, maxRow: courseGrouped[courseGrouped.count-1].value.count, maxSection: courseGrouped.count)
+//        print("Courses: \(courseData.dateAwarded) section: \(indexPath.section) row: \(indexPath.row)")
 
         return cell
     }
