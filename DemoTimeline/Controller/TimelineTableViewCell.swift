@@ -9,7 +9,7 @@ import UIKit
 
 class TimelineTableViewCell: UITableViewCell {
     
-    var allRows = Int()
+    var countRowSection: (row: Int, section:Int)?
     var currentIndexPath = IndexPath()
     let offSet: CGFloat = 40.0
     let circleRadius: CGFloat = 5.0
@@ -51,11 +51,21 @@ class TimelineTableViewCell: UITableViewCell {
         linePath.move(to: startPoint)
         
         var endPoint = CGPoint()
-        if currentIndexPath.row == allRows-1 {
-            endPoint = CGPoint(x: offSet, y: self.bounds.maxY)
-        } else {
-            endPoint = CGPoint(x: offSet, y: self.bounds.maxY)
+        if let count = countRowSection {
+            if currentIndexPath.row == count.row - 1 && currentIndexPath.section == count.section - 1 {
+                endPoint = CGPoint(x: offSet, y: self.bounds.midY)
+            } else {
+                endPoint = CGPoint(x: offSet, y: self.bounds.maxY)
+            }
+            
         }
+        
+//        if currentIndexPath.row == countRowSection?.0 ?? 1 - 1  {
+//            endPoint = CGPoint(x: offSet, y: self.bounds.midY)
+//        } else {
+//            endPoint = CGPoint(x: offSet, y: self.bounds.maxY)
+//        }
+        
         linePath.addLine(to: endPoint)
         
         createLine(path: linePath)

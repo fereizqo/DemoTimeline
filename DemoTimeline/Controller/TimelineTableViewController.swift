@@ -12,7 +12,7 @@ class TimelineTableViewController: UITableViewController {
     let offsetTimeline = 40.0
     let testArray = [2020, 2019, 2018]
     let courseArray = [
-        Course(dateAwarded: Date.dateFromCustomString(stringDate: "15/02/2008"), courseName: "Microsoft Office Course", typeCertificate: "Certificate of Completion"),
+//        Course(dateAwarded: Date.dateFromCustomString(stringDate: "15/02/2008"), courseName: "Microsoft Office Course", typeCertificate: "Certificate of Completion"),
         Course(dateAwarded: Date.dateFromCustomString(stringDate: "03/08/2020"), courseName: "Swift Course 2", typeCertificate: "Certificate of Completion"),
         Course(dateAwarded: Date.dateFromCustomString(stringDate: "03/06/2020"), courseName: "Swift Course 1", typeCertificate: "Certificate of Completion"),
         Course(dateAwarded: Date.dateFromCustomString(stringDate: "03/08/2014"), courseName: "Python Course", typeCertificate: "Certificate of Completion"),
@@ -42,9 +42,6 @@ class TimelineTableViewController: UITableViewController {
         
         let sortedYourArray = coursesGrouped.sorted( by: { $0.0 > $1.0 })
         courseGrouped = sortedYourArray
-        
-        
-        print(courseGrouped[1].value.isEmpty)
     }
     
     override func viewDidLoad() {
@@ -52,6 +49,10 @@ class TimelineTableViewController: UITableViewController {
         
         // Grouping course by year
         groupingCourse()
+        
+        // TableView appeareances
+        tableView.separatorStyle = .none
+        tableView.allowsSelection = false
         
         // Register tableview cell and header
         let timelineTableViewCellNib = UINib(nibName: "TimelineTableViewCell", bundle: Bundle(for: TimelineTableViewCell.self))
@@ -106,7 +107,7 @@ class TimelineTableViewController: UITableViewController {
         if section == 0 {
             startPoint = CGPoint(x: offsetTimeline, y: 25)
         } else {
-            startPoint = CGPoint(x: offsetTimeline, y: 0)
+            startPoint = CGPoint(x: offsetTimeline, y: -25)
         }
         
         endPoint = CGPoint(x: offsetTimeline, y: 45)
@@ -126,7 +127,7 @@ class TimelineTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TimelineTableViewCell", for: indexPath) as! TimelineTableViewCell
         // Configure the cell
-        cell.allRows = testArray.count
+        cell.countRowSection = (courseGrouped[indexPath.section].value.count, courseGrouped.count)
         cell.currentIndexPath = indexPath
         
         let courseData = courseGrouped[indexPath.section].value[indexPath.row]
