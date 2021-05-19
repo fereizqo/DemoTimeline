@@ -44,11 +44,6 @@ class TestTableViewCell: UITableViewCell {
         let dashPath = UIBezierPath()
         var startPoint = CGPoint()
 
-//        if currentIndexPath.row == 0 {
-//            startPoint = CGPoint(x:offSet, y:self.bounds.midY)
-//        } else {
-//            startPoint = CGPoint(x:offSet, y:0)
-//        }
         startPoint = CGPoint(x:offSet, y:0)
         dashPath.move(to: startPoint)
 

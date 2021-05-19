@@ -36,7 +36,7 @@
                                 <color key="currentPageIndicatorTintColor" red="0.96067088840000003" green="0.50076949599999998" blue="0.1467306018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pageControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Features" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nYK-Xp-Jnt">
-                                <rect key="frame" x="20" y="79" width="94" height="30"/>
+                                <rect key="frame" x="20" y="79" width="374" height="30"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -47,7 +47,7 @@
                         <constraints>
                             <constraint firstItem="nYK-Xp-Jnt" firstAttribute="leading" secondItem="g1E-GV-A9W" secondAttribute="leading" constant="20" id="6jP-PF-heY"/>
                             <constraint firstItem="Tr8-7v-YyE" firstAttribute="trailing" secondItem="g1E-GV-A9W" secondAttribute="trailing" id="Nc3-kb-ITW"/>
-                            <constraint firstItem="g1E-GV-A9W" firstAttribute="trailing" secondItem="nYK-Xp-Jnt" secondAttribute="trailing" constant="300" id="Qmb-1a-y7J"/>
+                            <constraint firstItem="g1E-GV-A9W" firstAttribute="trailing" secondItem="nYK-Xp-Jnt" secondAttribute="trailing" constant="20" id="Qmb-1a-y7J"/>
                             <constraint firstItem="Tr8-7v-YyE" firstAttribute="top" secondItem="QRL-Be-CU3" secondAttribute="top" constant="124" id="UFr-OP-kKV"/>
                             <constraint firstItem="NIs-AQ-y6e" firstAttribute="bottom" secondItem="Tr8-7v-YyE" secondAttribute="bottom" id="hW3-sW-7Nz"/>
                             <constraint firstItem="NIs-AQ-y6e" firstAttribute="centerX" secondItem="QRL-Be-CU3" secondAttribute="centerX" id="mjm-vr-X09"/>

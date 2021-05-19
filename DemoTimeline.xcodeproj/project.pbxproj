@@ -19,9 +19,6 @@
 		49ACBEE02653B4DB0034C69D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49ACBEDE2653B4DB0034C69D /* LaunchScreen.storyboard */; };
 		49ACBEEB2653B4DB0034C69D /* DemoTimelineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ACBEEA2653B4DB0034C69D /* DemoTimelineTests.swift */; };
 		49ACBEF62653B4DB0034C69D /* DemoTimelineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ACBEF52653B4DB0034C69D /* DemoTimelineUITests.swift */; };
-		49ACBF082653B6E60034C69D /* TimelineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ACBF062653B6E60034C69D /* TimelineTableViewCell.swift */; };
-		49ACBF092653B6E60034C69D /* TimelineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49ACBF072653B6E60034C69D /* TimelineTableViewCell.xib */; };
-		49ACBF0B2653B6F30034C69D /* TimelineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ACBF0A2653B6F30034C69D /* TimelineTableViewController.swift */; };
 		49ACBF0D2653B7110034C69D /* FeaturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ACBF0C2653B7110034C69D /* FeaturesViewController.swift */; };
 		49ACBF0F2653CABE0034C69D /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ACBF0E2653CABE0034C69D /* Course.swift */; };
 		49ACBF112653D1530034C69D /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ACBF102653D1530034C69D /* Extension.swift */; };
@@ -63,9 +60,6 @@
 		49ACBEF12653B4DB0034C69D /* DemoTimelineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoTimelineUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49ACBEF52653B4DB0034C69D /* DemoTimelineUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTimelineUITests.swift; sourceTree = "<group>"; };
 		49ACBEF72653B4DB0034C69D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		49ACBF062653B6E60034C69D /* TimelineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineTableViewCell.swift; sourceTree = "<group>"; };
-		49ACBF072653B6E60034C69D /* TimelineTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimelineTableViewCell.xib; sourceTree = "<group>"; };
-		49ACBF0A2653B6F30034C69D /* TimelineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineTableViewController.swift; sourceTree = "<group>"; };
 		49ACBF0C2653B7110034C69D /* FeaturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesViewController.swift; sourceTree = "<group>"; };
 		49ACBF0E2653CABE0034C69D /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		49ACBF102653D1530034C69D /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
@@ -160,7 +154,6 @@
 			isa = PBXGroup;
 			children = (
 				49ACBED92653B4D90034C69D /* Main.storyboard */,
-				49ACBF072653B6E60034C69D /* TimelineTableViewCell.xib */,
 				499C349D2655CE5600E29D87 /* TestTableViewCell.xib */,
 				499C34922654E21200E29D87 /* FeaturesCollectionViewCell.xib */,
 			);
@@ -172,8 +165,6 @@
 			children = (
 				49ACBED32653B4D90034C69D /* AppDelegate.swift */,
 				49ACBED52653B4D90034C69D /* SceneDelegate.swift */,
-				49ACBF0A2653B6F30034C69D /* TimelineTableViewController.swift */,
-				49ACBF062653B6E60034C69D /* TimelineTableViewCell.swift */,
 				499C34992655CD7400E29D87 /* TestTableViewCell.swift */,
 				499C349A2655CD7400E29D87 /* TestTableViewController.swift */,
 				49ACBF0C2653B7110034C69D /* FeaturesViewController.swift */,
@@ -293,7 +284,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49ACBF092653B6E60034C69D /* TimelineTableViewCell.xib in Resources */,
 				49ACBEE02653B4DB0034C69D /* LaunchScreen.storyboard in Resources */,
 				49ACBEDD2653B4DB0034C69D /* Assets.xcassets in Resources */,
 				499C349E2655CE5600E29D87 /* TestTableViewCell.xib in Resources */,
@@ -330,8 +320,6 @@
 				49ACBF112653D1530034C69D /* Extension.swift in Sources */,
 				499C34932654E21200E29D87 /* FeaturesCollectionViewCell.swift in Sources */,
 				49ACBED42653B4D90034C69D /* AppDelegate.swift in Sources */,
-				49ACBF082653B6E60034C69D /* TimelineTableViewCell.swift in Sources */,
-				49ACBF0B2653B6F30034C69D /* TimelineTableViewController.swift in Sources */,
 				49ACBED62653B4D90034C69D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
