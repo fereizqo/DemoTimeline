@@ -20,10 +20,19 @@ class FeaturesViewController: UIViewController {
         UIImage(named: "Image_5"),
     ]
     
+    var currentPage = 0 {
+        didSet {
+            featuresPageControl.currentPage = currentPage
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        // PageControl Setup
+        featuresPageControl.numberOfPages = imageArray.count
         
         // Register nib file
         let featuresCollectionViewCellNib = UINib(nibName: "FeaturesCollectionViewCell", bundle: Bundle(for: FeaturesCollectionViewCell.self))
@@ -37,9 +46,33 @@ class FeaturesViewController: UIViewController {
         featuresCollectionView.dataSource = self
     }
     
+    func getCurrentPage() -> Int {
+        let visibleRect = CGRect(origin: featuresCollectionView.contentOffset, size: featuresCollectionView.bounds.size)
+        let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
+        if let visibleIndexPath = featuresCollectionView.indexPathForItem(at: visiblePoint) {
+            return visibleIndexPath.row
+        }
+        
+        return currentPage
+    }
+    
 }
 
-extension FeaturesViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension FeaturesViewController: UICollectionViewDelegate {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        currentPage = getCurrentPage()
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        currentPage = getCurrentPage()
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        currentPage = getCurrentPage()
+    }
+}
+
+extension FeaturesViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return imageArray.count
     }
@@ -53,5 +86,4 @@ extension FeaturesViewController: UICollectionViewDelegate, UICollectionViewData
         
         return cell
     }
-    
 }
