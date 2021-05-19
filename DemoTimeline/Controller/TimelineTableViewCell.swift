@@ -24,37 +24,11 @@ class TimelineTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         backView.layer.cornerRadius = 5
+        self.backgroundColor = UIColor.clear
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-//        // Create the circle
-//        let circlePath = UIBezierPath(arcCenter: CGPoint(x: offsetTimeline, y: self.bounds.midY), radius: CGFloat(circleRadius), startAngle: CGFloat(0), endAngle: CGFloat(Double.pi * 2), clockwise: true)
-//        createCircle(path: circlePath)
-//
-//        // Create the line
-//        let linePath = UIBezierPath()
-//        var startPoint = CGPoint()
-//        var endPoint = CGPoint()
-//
-//        startPoint = CGPoint(x: offsetTimeline, y: 0)
-//        linePath.move(to: startPoint)
-//
-//        if let count = countRowSection {
-//            print("IndexPath row: \(currentIndexPath.row) section: \(currentIndexPath.section)")
-//            print("Inside row: \(count.row - 1) section: \(count.section - 1)")
-//            if currentIndexPath.row == count.row - 1 && currentIndexPath.section == count.section - 1 {
-//                print("boom")
-//                endPoint = CGPoint(x: offsetTimeline, y: self.bounds.midY)
-//            } else {
-//                endPoint = CGPoint(x: offsetTimeline, y: self.bounds.maxY)
-//            }
-//
-//        }
-//
-//        linePath.addLine(to: endPoint)
-//        createLine(path: linePath)
         
     }
 
@@ -67,6 +41,40 @@ class TimelineTableViewCell: UITableViewCell {
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         
+        // Create the circle
+        let circlePath = UIBezierPath(arcCenter: CGPoint(x: offsetTimeline, y: self.bounds.midY), radius: CGFloat(circleRadius), startAngle: CGFloat(0), endAngle: CGFloat(Double.pi * 2), clockwise: true)
+        createCircle(path: circlePath)
+
+        // Create the line
+        let linePath = UIBezierPath()
+        var startPoint = CGPoint()
+        var endPoint = CGPoint()
+
+        startPoint = CGPoint(x: offsetTimeline, y: 0)
+        linePath.move(to: startPoint)
+
+        if let count = countRowSection {
+            print("IndexPath row: \(currentIndexPath.row) section: \(currentIndexPath.section)")
+            print("Inside row: \(count.row - 1) section: \(count.section - 1)")
+            if currentIndexPath.row == count.row - 1 && currentIndexPath.section == count.section - 1 {
+                print("boom")
+                endPoint = CGPoint(x: offsetTimeline, y: self.bounds.midY)
+            } else {
+                endPoint = CGPoint(x: offsetTimeline, y: self.bounds.maxY)
+            }
+
+        }
+
+        linePath.addLine(to: endPoint)
+
+        linePath.lineWidth = 2.0
+        linePath.lineCapStyle = .butt
+        UIColor.systemGray2.set()
+        linePath.stroke()
+
+        setNeedsDisplay()
+        
+        createLine(path: linePath)
     }
     
     func createCircle(path: UIBezierPath) {

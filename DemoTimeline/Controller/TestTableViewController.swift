@@ -1,16 +1,19 @@
 //
-//  TimelineTableViewController.swift
-//  DemoTimeline
+//  TestTableViewController.swift
+//  TestTimeline
 //
 //  Created by Fereizqo Sulaiman on 18/05/21.
 //
 
 import UIKit
 
-class TimelineTableViewController: UITableViewController {
+class TestTableViewController: UITableViewController {
     
     let offsetTimeline = 40.0
+    let testArray = [2020, 2019, 2018, 2020, 2019, 2018, 2020, 2019, 2018, 2020, 2019, 2018, 2020, 2019, 2018, 2020, 2019, 2018, 2020, 2019, 2018, 2020, 2019, 2018, 2020, 2019, 2018, 2020, 2019, 2018, 2020, 2019, 2018, 2020, 2019, 2018, 2020, 2019, 2018, 2020, 2019, 2018, 2020, 2019, 2018, 2020, 2019, 2018]
+    
     let courseArray = [
+        Course(dateAwarded: Date.dateFromCustomString(stringDate: "15/02/1997"), courseName: "Computer Course", typeCertificate: "Certificate of Completion"),
         Course(dateAwarded: Date.dateFromCustomString(stringDate: "15/10/2020"), courseName: "Swift Course 3", typeCertificate: "Certificate of Completion"),
         Course(dateAwarded: Date.dateFromCustomString(stringDate: "03/08/2020"), courseName: "Swift Course 2", typeCertificate: "Certificate of Completion"),
         Course(dateAwarded: Date.dateFromCustomString(stringDate: "15/06/2020"), courseName: "Swift Course 1", typeCertificate: "Certificate of Completion"),
@@ -58,20 +61,19 @@ class TimelineTableViewController: UITableViewController {
         tableView.allowsSelection = false
         
         // Register tableview cell
-        let timelineTableViewCellNib = UINib(nibName: "TimelineTableViewCell", bundle: Bundle(for: TimelineTableViewCell.self))
-        self.tableView.register(timelineTableViewCellNib, forCellReuseIdentifier: "TimelineTableViewCell")
-        
+        let testTableViewCellNib = UINib(nibName: "TestTableViewCell", bundle: Bundle(for: TestTableViewCell.self))
+        self.tableView.register(testTableViewCellNib, forCellReuseIdentifier: "TestTableViewCell")
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // return the number of sections
+        // Return the number of sections
         return courseGrouped.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // return the number of rows
+        // Return the number of rows
         return courseGrouped[section].value.count
     }
     
@@ -132,21 +134,17 @@ class TimelineTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "TimelineTableViewCell", for: indexPath) as? TimelineTableViewCell else { return TimelineTableViewCell()}
         
-        // Configure the cell
-        cell.countRowSection = (courseGrouped[courseGrouped.count-1].value.count, courseGrouped.count)
-//        cell.countRowSection = (courseGrouped[indexPath.section].value.count, courseGrouped.count)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "TestTableViewCell", for: indexPath) as? TestTableViewCell else { return UITableViewCell()}
+        
+        cell.allRows = courseGrouped[courseGrouped.count-1].value.count
+        cell.allSection = courseGrouped.count
         cell.currentIndexPath = indexPath
         cell.setNeedsDisplay()
-        
         let courseData = courseGrouped[indexPath.section].value[indexPath.row]
         cell.configure(typeCertificate: courseData.typeCertificate, courseName: courseData.courseName, dateAwarded: courseData.dateAwarded)
         
-//        cell.createLine(indexPath: indexPath, maxRow: courseGrouped[courseGrouped.count-1].value.count, maxSection: courseGrouped.count)
-//        print("Courses: \(courseData.dateAwarded) section: \(indexPath.section) row: \(indexPath.row)")
-
         return cell
     }
-    
+
 }

@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		499C34932654E21200E29D87 /* FeaturesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499C34912654E21200E29D87 /* FeaturesCollectionViewCell.swift */; };
 		499C34942654E21200E29D87 /* FeaturesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 499C34922654E21200E29D87 /* FeaturesCollectionViewCell.xib */; };
+		499C349B2655CD7400E29D87 /* TestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499C34992655CD7400E29D87 /* TestTableViewCell.swift */; };
+		499C349C2655CD7400E29D87 /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499C349A2655CD7400E29D87 /* TestTableViewController.swift */; };
+		499C349E2655CE5600E29D87 /* TestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 499C349D2655CE5600E29D87 /* TestTableViewCell.xib */; };
 		49ACBED42653B4D90034C69D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ACBED32653B4D90034C69D /* AppDelegate.swift */; };
 		49ACBED62653B4D90034C69D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ACBED52653B4D90034C69D /* SceneDelegate.swift */; };
 		49ACBEDB2653B4D90034C69D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49ACBED92653B4D90034C69D /* Main.storyboard */; };
@@ -44,6 +47,9 @@
 /* Begin PBXFileReference section */
 		499C34912654E21200E29D87 /* FeaturesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesCollectionViewCell.swift; sourceTree = "<group>"; };
 		499C34922654E21200E29D87 /* FeaturesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeaturesCollectionViewCell.xib; sourceTree = "<group>"; };
+		499C34992655CD7400E29D87 /* TestTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableViewCell.swift; sourceTree = "<group>"; };
+		499C349A2655CD7400E29D87 /* TestTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
+		499C349D2655CE5600E29D87 /* TestTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestTableViewCell.xib; sourceTree = "<group>"; };
 		49ACBED02653B4D90034C69D /* DemoTimeline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoTimeline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49ACBED32653B4D90034C69D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49ACBED52653B4D90034C69D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -155,6 +161,7 @@
 			children = (
 				49ACBED92653B4D90034C69D /* Main.storyboard */,
 				49ACBF072653B6E60034C69D /* TimelineTableViewCell.xib */,
+				499C349D2655CE5600E29D87 /* TestTableViewCell.xib */,
 				499C34922654E21200E29D87 /* FeaturesCollectionViewCell.xib */,
 			);
 			path = View;
@@ -167,6 +174,8 @@
 				49ACBED52653B4D90034C69D /* SceneDelegate.swift */,
 				49ACBF0A2653B6F30034C69D /* TimelineTableViewController.swift */,
 				49ACBF062653B6E60034C69D /* TimelineTableViewCell.swift */,
+				499C34992655CD7400E29D87 /* TestTableViewCell.swift */,
+				499C349A2655CD7400E29D87 /* TestTableViewController.swift */,
 				49ACBF0C2653B7110034C69D /* FeaturesViewController.swift */,
 				499C34912654E21200E29D87 /* FeaturesCollectionViewCell.swift */,
 			);
@@ -287,6 +296,7 @@
 				49ACBF092653B6E60034C69D /* TimelineTableViewCell.xib in Resources */,
 				49ACBEE02653B4DB0034C69D /* LaunchScreen.storyboard in Resources */,
 				49ACBEDD2653B4DB0034C69D /* Assets.xcassets in Resources */,
+				499C349E2655CE5600E29D87 /* TestTableViewCell.xib in Resources */,
 				49ACBEDB2653B4D90034C69D /* Main.storyboard in Resources */,
 				499C34942654E21200E29D87 /* FeaturesCollectionViewCell.xib in Resources */,
 			);
@@ -314,7 +324,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				49ACBF0F2653CABE0034C69D /* Course.swift in Sources */,
+				499C349C2655CD7400E29D87 /* TestTableViewController.swift in Sources */,
 				49ACBF0D2653B7110034C69D /* FeaturesViewController.swift in Sources */,
+				499C349B2655CD7400E29D87 /* TestTableViewCell.swift in Sources */,
 				49ACBF112653D1530034C69D /* Extension.swift in Sources */,
 				499C34932654E21200E29D87 /* FeaturesCollectionViewCell.swift in Sources */,
 				49ACBED42653B4D90034C69D /* AppDelegate.swift in Sources */,
