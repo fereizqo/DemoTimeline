@@ -24,11 +24,11 @@ class TimelineTableViewController: UITableViewController {
     
     fileprivate func groupingCourse() {
         // Sorting course by date
-        let sortedCourseArray = courseArray.sorted(by: { $0.dateAwarded! > $1.dateAwarded! })
+        let sortedCourseArray = courseArray.sorted(by: { $0.dateAwarded > $1.dateAwarded })
         
         // Group course by year
         var coursesGrouped = Dictionary(grouping: sortedCourseArray) { (element) -> Int in
-            return element.dateAwarded?.year ?? 0
+            return element.dateAwarded.year
         }
         
         let yearArray = Array(coursesGrouped.keys)
@@ -125,25 +125,15 @@ class TimelineTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TimelineTableViewCell", for: indexPath) as! TimelineTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "TimelineTableViewCell", for: indexPath) as? TimelineTableViewCell else { return TimelineTableViewCell()}
+        
         // Configure the cell
         cell.countRowSection = (courseGrouped[indexPath.section].value.count, courseGrouped.count)
         cell.currentIndexPath = indexPath
         
         let courseData = courseGrouped[indexPath.section].value[indexPath.row]
+        cell.configure(typeCertificate: courseData.typeCertificate, courseName: courseData.courseName, dateAwarded: courseData.dateAwarded)
         
-        // Underline style
-        let attributedCourseString = NSMutableAttributedString.init(string: courseData.typeCertificate ?? "")
-        attributedCourseString.addAttribute(NSAttributedString.Key.underlineStyle, value: 1, range: NSRange.init(location: 0, length: attributedCourseString.length))
-        cell.typeCertificateLabel.attributedText = attributedCourseString
-        
-        // Bold style
-        cell.courseNameLabel.font = UIFont.boldSystemFont(ofSize: cell.courseNameLabel.font.pointSize)
-        cell.courseNameLabel.text = courseData.courseName
-        
-        // Gray color
-        cell.dateAwardedLabel.textColor = UIColor.darkGray
-        cell.dateAwardedLabel.text = "Awarded on: \(courseData.dateAwarded?.toString() ?? "")"
 
         return cell
     }

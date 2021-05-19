@@ -32,8 +32,8 @@
                             </collectionView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="NIs-AQ-y6e">
                                 <rect key="frame" x="146" y="276" width="122" height="28"/>
-                                <color key="pageIndicatorTintColor" systemColor="systemOrangeColor"/>
-                                <color key="currentPageIndicatorTintColor" systemColor="systemPinkColor"/>
+                                <color key="pageIndicatorTintColor" systemColor="systemGray4Color"/>
+                                <color key="currentPageIndicatorTintColor" red="0.96067088840000003" green="0.50076949599999998" blue="0.1467306018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pageControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Features" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nYK-Xp-Jnt">
                                 <rect key="frame" x="20" y="79" width="94" height="30"/>
@@ -48,10 +48,10 @@
                             <constraint firstItem="nYK-Xp-Jnt" firstAttribute="leading" secondItem="g1E-GV-A9W" secondAttribute="leading" constant="20" id="6jP-PF-heY"/>
                             <constraint firstItem="Tr8-7v-YyE" firstAttribute="trailing" secondItem="g1E-GV-A9W" secondAttribute="trailing" id="Nc3-kb-ITW"/>
                             <constraint firstItem="g1E-GV-A9W" firstAttribute="trailing" secondItem="nYK-Xp-Jnt" secondAttribute="trailing" constant="300" id="Qmb-1a-y7J"/>
-                            <constraint firstItem="Tr8-7v-YyE" firstAttribute="top" secondItem="g1E-GV-A9W" secondAttribute="top" constant="80" id="UFr-OP-kKV"/>
+                            <constraint firstItem="Tr8-7v-YyE" firstAttribute="top" secondItem="QRL-Be-CU3" secondAttribute="top" constant="124" id="UFr-OP-kKV"/>
                             <constraint firstItem="NIs-AQ-y6e" firstAttribute="bottom" secondItem="Tr8-7v-YyE" secondAttribute="bottom" id="hW3-sW-7Nz"/>
                             <constraint firstItem="NIs-AQ-y6e" firstAttribute="centerX" secondItem="QRL-Be-CU3" secondAttribute="centerX" id="mjm-vr-X09"/>
-                            <constraint firstItem="nYK-Xp-Jnt" firstAttribute="top" secondItem="g1E-GV-A9W" secondAttribute="top" constant="35" id="nSo-cW-giJ"/>
+                            <constraint firstItem="nYK-Xp-Jnt" firstAttribute="top" secondItem="QRL-Be-CU3" secondAttribute="top" constant="79" id="nSo-cW-giJ"/>
                             <constraint firstItem="Tr8-7v-YyE" firstAttribute="leading" secondItem="g1E-GV-A9W" secondAttribute="leading" id="uBS-ZO-Ri8"/>
                         </constraints>
                     </view>
@@ -125,11 +125,8 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

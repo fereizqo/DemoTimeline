@@ -8,7 +8,7 @@
 import Foundation
 
 struct Course {
-    let dateAwarded: Date?
-    let courseName: String?
-    let typeCertificate: String?
+    let dateAwarded: Date
+    let courseName: String
+    let typeCertificate: String
 }

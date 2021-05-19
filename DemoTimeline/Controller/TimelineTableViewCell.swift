@@ -59,13 +59,6 @@ class TimelineTableViewCell: UITableViewCell {
             }
             
         }
-        
-//        if currentIndexPath.row == countRowSection?.0 ?? 1 - 1  {
-//            endPoint = CGPoint(x: offSet, y: self.bounds.midY)
-//        } else {
-//            endPoint = CGPoint(x: offSet, y: self.bounds.maxY)
-//        }
-        
         linePath.addLine(to: endPoint)
         
         createLine(path: linePath)
@@ -87,5 +80,22 @@ class TimelineTableViewCell: UITableViewCell {
         shapeLayer.lineCap = .butt
         shapeLayer.strokeColor = UIColor.systemGray2.cgColor
         self.layer.insertSublayer(shapeLayer, at: 1)
+    }
+}
+
+extension TimelineTableViewCell {
+    func configure(typeCertificate: String, courseName: String, dateAwarded: Date) {
+        // Underline style
+        let attributedCourseString = NSMutableAttributedString.init(string: typeCertificate)
+        attributedCourseString.addAttribute(NSAttributedString.Key.underlineStyle, value: 1, range: NSRange.init(location: 0, length: attributedCourseString.length))
+        typeCertificateLabel.attributedText = attributedCourseString
+        
+        // Bold style
+        courseNameLabel.font = UIFont.boldSystemFont(ofSize: courseNameLabel.font.pointSize)
+        courseNameLabel.text = courseName
+        
+        // Gray color
+        dateAwardedLabel.textColor = UIColor.darkGray
+        dateAwardedLabel.text = "Awarded on: \(dateAwarded.toString())"
     }
 }
