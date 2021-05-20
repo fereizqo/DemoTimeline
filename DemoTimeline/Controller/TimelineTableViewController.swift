@@ -11,6 +11,8 @@ class TimelineTableViewController: UITableViewController {
     
     let offsetTimeline = 40.0
     
+    var courseGrouped = [Dictionary<Int, [Course]>.Element]()
+    
     let courseArray = [
         Course(dateAwarded: Date.dateFromCustomString(stringDate: "15/02/1997"), courseName: "Computer Course", typeCertificate: "Certificate of Completion"),
         Course(dateAwarded: Date.dateFromCustomString(stringDate: "15/10/2020"), courseName: "Swift Course 3", typeCertificate: "Certificate of Completion"),
@@ -21,8 +23,6 @@ class TimelineTableViewController: UITableViewController {
         Course(dateAwarded: Date.dateFromCustomString(stringDate: "03/08/2018"), courseName: "C# Course 2", typeCertificate: "Certificate of Completion"),
         Course(dateAwarded: Date.dateFromCustomString(stringDate: "15/02/2008"), courseName: "Microsoft Office Course", typeCertificate: "Certificate of Completion"),
     ]
-    
-    var courseGrouped = [Dictionary<Int, [Course]>.Element]()
     
     fileprivate func groupingCourse() {
         // Sorting course by date
@@ -77,10 +77,12 @@ class TimelineTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        // Return the height of header sectionn
         return 45
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        // Create header view
         let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 50))
         
         // Create year label
@@ -91,18 +93,20 @@ class TimelineTableViewController: UITableViewController {
         label.layer.masksToBounds = true
         
         if courseGrouped[section].value.isEmpty {
+            // Year label style without course data
             label.frame = CGRect.init(x: 15, y: 5, width: 50, height: headerView.frame.height-25)
             label.font = .boldSystemFont(ofSize: 12)
             label.backgroundColor = UIColor.systemGray5
             label.textColor = UIColor.darkGray
-            
         } else {
+            // Year label style with course data
             label.frame = CGRect.init(x: 10.0, y: 5, width: 60, height: headerView.frame.height-20)
             label.font = .boldSystemFont(ofSize: 14)
             label.backgroundColor = #colorLiteral(red: 0.9943941236, green: 0.9069606066, blue: 0.9247472882, alpha: 1)
             label.textColor = .black
         }
         
+        // Add label to header view
         headerView.addSubview(label)
         
         // Create line for the timeline
@@ -111,24 +115,31 @@ class TimelineTableViewController: UITableViewController {
         var endPoint = CGPoint()
         
         if section == 0 {
+            // The line start position at first section
             startPoint = CGPoint(x: offsetTimeline, y: 25)
         } else {
+            // The line start position at other section
             startPoint = CGPoint(x: offsetTimeline, y: -25)
         }
         
+        // The line end position
         endPoint = CGPoint(x: offsetTimeline, y: 45)
         
+        // Create the line path
         linePath.move(to: startPoint)
         linePath.addLine(to: endPoint)
         
-        let shapeLayer = CAShapeLayer()
-        shapeLayer.path = linePath.cgPath
-        shapeLayer.lineWidth = 2.0
-        shapeLayer.lineCap = .butt
-        shapeLayer.strokeColor = UIColor.systemGray2.cgColor
+        //  Create layer for line path
+        let lineLayer = CAShapeLayer()
+        lineLayer.path = linePath.cgPath
+        lineLayer.lineWidth = 2.0
+        lineLayer.lineCap = .butt
+        lineLayer.strokeColor = UIColor.systemGray2.cgColor
         
-        headerView.layer.insertSublayer(shapeLayer, at: 0)
+        // Add line to header view
+        headerView.layer.insertSublayer(lineLayer, at: 0)
         
+        // Return the view of header section
         return headerView
     }
 
@@ -136,13 +147,17 @@ class TimelineTableViewController: UITableViewController {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "TimelineTableViewCell", for: indexPath) as? TimelineTableViewCell else { return UITableViewCell()}
         
+        // Pass data into tableView cell
         cell.allRows = courseGrouped[courseGrouped.count-1].value.count
         cell.allSection = courseGrouped.count
         cell.currentIndexPath = indexPath
         cell.setNeedsDisplay()
+        
+        // Config cell
         let courseData = courseGrouped[indexPath.section].value[indexPath.row]
         cell.configure(typeCertificate: courseData.typeCertificate, courseName: courseData.courseName, dateAwarded: courseData.dateAwarded)
         
+        // Return cell for row
         return cell
     }
 

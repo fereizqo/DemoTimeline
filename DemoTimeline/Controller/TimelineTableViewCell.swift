@@ -13,7 +13,8 @@ class TimelineTableViewCell: UITableViewCell {
     var allSection = Int()
     var countRowSection: (row: Int, section:Int)?
     var currentIndexPath = IndexPath()
-    let offSet: CGFloat = 40.0
+    
+    let offsetTimeline: CGFloat = 40.0
     let circleRadius: CGFloat = 5.0
     
     @IBOutlet weak var backView: UIView!
@@ -36,43 +37,45 @@ class TimelineTableViewCell: UITableViewCell {
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         
-        // Create the circle
-        let circlePath = UIBezierPath(arcCenter: CGPoint(x: offSet, y: self.bounds.midY), radius: CGFloat(circleRadius), startAngle: CGFloat(0), endAngle: CGFloat(Double.pi * 2), clockwise: true)
-        createCircle(path: circlePath)
+        // Create the circle path
+        let circlePath = UIBezierPath(arcCenter: CGPoint(x: offsetTimeline, y: self.bounds.midY), radius: CGFloat(circleRadius), startAngle: CGFloat(0), endAngle: CGFloat(Double.pi * 2), clockwise: true)
         
-        // Create a line with dashed pattern
+        // Create layer for circle path
+        let circleLayer = CAShapeLayer()
+        circleLayer.path = circlePath.cgPath
+        circleLayer.fillColor = UIColor.white.cgColor
+        circleLayer.strokeColor = UIColor.red.cgColor
+        circleLayer.lineWidth = 2.0
+        
+        // Add circle to cell view
+        self.layer.addSublayer(circleLayer)
+        
+        // Create line for the timeline
         let linePath = UIBezierPath()
         var startPoint = CGPoint()
-
-        startPoint = CGPoint(x:offSet, y:0)
-        linePath.move(to: startPoint)
-
         var endPoint = CGPoint()
+        
+        // The line start position at each row
+        startPoint = CGPoint(x: offsetTimeline, y: 0)
 
-        print("IndexPath row: \(currentIndexPath.row) section: \(currentIndexPath.section)")
         if currentIndexPath.row == allRows - 1 && currentIndexPath.section == allSection - 1 {
-            endPoint = CGPoint(x:offSet, y:self.bounds.midY)
+            // The line end position at last row and last section
+            endPoint = CGPoint(x: offsetTimeline, y: self.bounds.midY)
         } else {
-            endPoint = CGPoint(x:offSet, y:self.bounds.maxY)
+            // The line end position at other row and other section
+            endPoint = CGPoint(x: offsetTimeline, y: self.bounds.maxY)
         }
-
+        
+        // Create the line path
+        linePath.move(to: startPoint)
         linePath.addLine(to: endPoint)
-
+        
+        // Fill the line path
         linePath.lineWidth = 2.0
         linePath.lineCapStyle = .butt
         UIColor.systemGray2.set()
         linePath.stroke()
-        
         setNeedsDisplay()
-    }
-    
-    func createCircle(path: UIBezierPath) {
-        let shapeLayer = CAShapeLayer()
-        shapeLayer.path = path.cgPath
-        shapeLayer.fillColor = UIColor.white.cgColor
-        shapeLayer.strokeColor = UIColor.red.cgColor
-        shapeLayer.lineWidth = 2.0
-        self.layer.addSublayer(shapeLayer)
     }
 }
 
