@@ -9,7 +9,11 @@ import UIKit
 
 class TimelineTableViewController: UITableViewController {
     
-    let offsetTimeline = 40.0
+    let offsetTimeline: CGFloat = 40.0
+    let labelTimelineWidthFilled: CGFloat = 60.0
+    let labelTimelineWidthEmpty: CGFloat = 50.0
+    let labelTimelineHeightFilled: CGFloat = 30.0
+    let labelTimelineHeightEmpty: CGFloat = 25.0
     
     var courseGrouped = [Dictionary<Int, [Course]>.Element]()
     
@@ -79,11 +83,13 @@ class TimelineTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         // Return the height of header sectionn
         return 45
+//        return headerTimelineHeight
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         // Create header view
         let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 50))
+        headerView.backgroundColor = .brown
         
         // Create year label
         let label = UILabel()
@@ -94,13 +100,13 @@ class TimelineTableViewController: UITableViewController {
         
         if courseGrouped[section].value.isEmpty {
             // Year label style without course data
-            label.frame = CGRect.init(x: 15, y: 5, width: 50, height: headerView.frame.height-25)
+            label.frame = CGRect.init(x: offsetTimeline - (0.5*labelTimelineWidthEmpty), y: 5, width: labelTimelineWidthEmpty, height: headerView.frame.height-25)
             label.font = .boldSystemFont(ofSize: 12)
             label.backgroundColor = UIColor.systemGray5
             label.textColor = UIColor.darkGray
         } else {
             // Year label style with course data
-            label.frame = CGRect.init(x: 10.0, y: 5, width: 60, height: headerView.frame.height-20)
+            label.frame = CGRect.init(x: offsetTimeline - (0.5*labelTimelineWidthFilled), y: 5, width: labelTimelineWidthFilled, height: headerView.frame.height-20)
             label.font = .boldSystemFont(ofSize: 14)
             label.backgroundColor = #colorLiteral(red: 0.9943941236, green: 0.9069606066, blue: 0.9247472882, alpha: 1)
             label.textColor = .black
