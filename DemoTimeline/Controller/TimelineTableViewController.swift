@@ -1,16 +1,15 @@
 //
-//  TestTableViewController.swift
-//  TestTimeline
+//  TimelineTableViewController.swift
+//  DemoTimeline
 //
 //  Created by Fereizqo Sulaiman on 18/05/21.
 //
 
 import UIKit
 
-class TestTableViewController: UITableViewController {
+class TimelineTableViewController: UITableViewController {
     
     let offsetTimeline = 40.0
-    let testArray = [2020, 2019, 2018, 2020, 2019, 2018, 2020, 2019, 2018, 2020, 2019, 2018, 2020, 2019, 2018, 2020, 2019, 2018, 2020, 2019, 2018, 2020, 2019, 2018, 2020, 2019, 2018, 2020, 2019, 2018, 2020, 2019, 2018, 2020, 2019, 2018, 2020, 2019, 2018, 2020, 2019, 2018, 2020, 2019, 2018, 2020, 2019, 2018]
     
     let courseArray = [
         Course(dateAwarded: Date.dateFromCustomString(stringDate: "15/02/1997"), courseName: "Computer Course", typeCertificate: "Certificate of Completion"),
@@ -61,8 +60,8 @@ class TestTableViewController: UITableViewController {
         tableView.allowsSelection = false
         
         // Register tableview cell
-        let testTableViewCellNib = UINib(nibName: "TestTableViewCell", bundle: Bundle(for: TestTableViewCell.self))
-        self.tableView.register(testTableViewCellNib, forCellReuseIdentifier: "TestTableViewCell")
+        let testTableViewCellNib = UINib(nibName: "TimelineTableViewCell", bundle: Bundle(for: TimelineTableViewCell.self))
+        self.tableView.register(testTableViewCellNib, forCellReuseIdentifier: "TimelineTableViewCell")
     }
 
     // MARK: - Table view data source
@@ -135,7 +134,7 @@ class TestTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "TestTableViewCell", for: indexPath) as? TestTableViewCell else { return UITableViewCell()}
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "TimelineTableViewCell", for: indexPath) as? TimelineTableViewCell else { return UITableViewCell()}
         
         cell.allRows = courseGrouped[courseGrouped.count-1].value.count
         cell.allSection = courseGrouped.count

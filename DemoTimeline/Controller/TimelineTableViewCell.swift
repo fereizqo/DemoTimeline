@@ -1,13 +1,13 @@
 //
-//  TestTableViewCell.swift
-//  TestTimeline
+//  TimelineTableViewCell.swift
+//  DemoTimeline
 //
 //  Created by Fereizqo Sulaiman on 18/05/21.
 //
 
 import UIKit
 
-class TestTableViewCell: UITableViewCell {
+class TimelineTableViewCell: UITableViewCell {
     
     var allRows = Int()
     var allSection = Int()
@@ -41,11 +41,11 @@ class TestTableViewCell: UITableViewCell {
         createCircle(path: circlePath)
         
         // Create a line with dashed pattern
-        let dashPath = UIBezierPath()
+        let linePath = UIBezierPath()
         var startPoint = CGPoint()
 
         startPoint = CGPoint(x:offSet, y:0)
-        dashPath.move(to: startPoint)
+        linePath.move(to: startPoint)
 
         var endPoint = CGPoint()
 
@@ -56,12 +56,12 @@ class TestTableViewCell: UITableViewCell {
             endPoint = CGPoint(x:offSet, y:self.bounds.maxY)
         }
 
-        dashPath.addLine(to: endPoint)
+        linePath.addLine(to: endPoint)
 
-        dashPath.lineWidth = 2.0
-        dashPath.lineCapStyle = .butt
+        linePath.lineWidth = 2.0
+        linePath.lineCapStyle = .butt
         UIColor.systemGray2.set()
-        dashPath.stroke()
+        linePath.stroke()
         
         setNeedsDisplay()
     }
@@ -76,7 +76,7 @@ class TestTableViewCell: UITableViewCell {
     }
 }
 
-extension TestTableViewCell {
+extension TimelineTableViewCell {
     func configure(typeCertificate: String, courseName: String, dateAwarded: Date) {
         // Underline style
         let attributedCourseString = NSMutableAttributedString.init(string: typeCertificate)
