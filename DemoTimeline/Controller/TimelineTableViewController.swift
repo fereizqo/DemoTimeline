@@ -9,11 +9,11 @@ import UIKit
 
 class TimelineTableViewController: UITableViewController {
     
-    let offsetTimeline: CGFloat = 50.0
-    let labelTimelineWidthFilled: CGFloat = 60.0
+    let offsetTimeline: CGFloat = 60.0
+    let labelTimelineWidthFilled: CGFloat = 70.0
     let labelTimelineWidthEmpty: CGFloat = 50.0
     
-    let sectionHeaderHeight: CGFloat = 50.0
+    let sectionHeaderHeight: CGFloat = 40.0
     let labelTimelineHeightFilled: CGFloat = 30.0
     let labelTimelineHeightEmpty: CGFloat = 25.0
     
@@ -70,7 +70,7 @@ class TimelineTableViewController: UITableViewController {
         self.tableView.register(testTableViewCellNib, forCellReuseIdentifier: "TimelineTableViewCell")
     }
 
-    // MARK: - Table view data source
+    // MARK: - Table view data source and delegate
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // Return the number of sections
@@ -87,10 +87,13 @@ class TimelineTableViewController: UITableViewController {
         return sectionHeaderHeight
     }
     
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.1*sectionHeaderHeight
+    }
+    
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         // Create header view
         let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: sectionHeaderHeight))
-//        headerView.backgroundColor = .brown
         
         // Create year label
         let label = UILabel()
@@ -132,7 +135,7 @@ class TimelineTableViewController: UITableViewController {
             startPoint = CGPoint(x: offsetTimeline, y: 0.5*sectionHeaderHeight)
         } else {
             // The line start position at other section
-            startPoint = CGPoint(x: offsetTimeline, y: -(0.5*sectionHeaderHeight))
+            startPoint = CGPoint(x: offsetTimeline, y: -(0.2*sectionHeaderHeight))
         }
         
         // The line end position
@@ -165,7 +168,6 @@ class TimelineTableViewController: UITableViewController {
         cell.allSection = courseGrouped.count
         cell.currentIndexPath = indexPath
         cell.setNeedsDisplay()
-        
         // Config cell
         let courseData = courseGrouped[indexPath.section].value[indexPath.row]
         cell.configure(typeCertificate: courseData.typeCertificate, courseName: courseData.courseName, dateAwarded: courseData.dateAwarded)

@@ -17,25 +17,25 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Idc-OP-6bd">
-                        <rect key="frame" x="60" y="15" width="240" height="67"/>
+                        <rect key="frame" x="60" y="10" width="240" height="77"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="DoT-1d-eFn">
-                                <rect key="frame" x="8" y="8" width="224" height="51"/>
+                                <rect key="frame" x="8" y="8" width="224" height="61"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rsq-bf-5lM">
-                                        <rect key="frame" x="0.0" y="0.0" width="224" height="14.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="224" height="24.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dgd-4K-kH2">
-                                        <rect key="frame" x="0.0" y="19.5" width="224" height="14.5"/>
+                                        <rect key="frame" x="0.0" y="29.5" width="224" height="14.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYw-eA-Nwd">
-                                        <rect key="frame" x="0.0" y="39" width="224" height="12"/>
+                                        <rect key="frame" x="0.0" y="49" width="224" height="12"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -54,9 +54,9 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="Idc-OP-6bd" secondAttribute="trailing" constant="20" id="8OK-Us-JXA"/>
-                    <constraint firstAttribute="bottom" secondItem="Idc-OP-6bd" secondAttribute="bottom" constant="15" id="JHt-xu-a3X"/>
+                    <constraint firstAttribute="bottom" secondItem="Idc-OP-6bd" secondAttribute="bottom" constant="10" id="JHt-xu-a3X"/>
                     <constraint firstItem="Idc-OP-6bd" firstAttribute="leading" secondItem="5CJ-KI-Uoq" secondAttribute="leading" constant="60" id="Uge-lD-LhS"/>
-                    <constraint firstItem="Idc-OP-6bd" firstAttribute="top" secondItem="5CJ-KI-Uoq" secondAttribute="top" constant="15" id="yOk-J4-6kQ"/>
+                    <constraint firstItem="Idc-OP-6bd" firstAttribute="top" secondItem="5CJ-KI-Uoq" secondAttribute="top" constant="10" id="yOk-J4-6kQ"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="S1M-HR-bmE"/>

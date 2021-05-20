@@ -14,7 +14,7 @@ class TimelineTableViewCell: UITableViewCell {
     var countRowSection: (row: Int, section:Int)?
     var currentIndexPath = IndexPath()
     
-    let offsetTimeline: CGFloat = 50.0
+    let offsetTimeline: CGFloat = 60.0
     let offsetCelltoTimeline: CGFloat = 20.0
     let circleRadius: CGFloat = 5.0
     
