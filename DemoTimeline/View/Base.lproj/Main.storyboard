@@ -55,7 +55,7 @@
                             <constraint firstItem="Tr8-7v-YyE" firstAttribute="leading" secondItem="g1E-GV-A9W" secondAttribute="leading" id="uBS-ZO-Ri8"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Features" id="Zpb-sn-lF7"/>
+                    <tabBarItem key="tabBarItem" title="Features" image="newspaper" catalog="system" id="Zpb-sn-lF7"/>
                     <navigationItem key="navigationItem" title="Features" id="fmT-gq-GPY"/>
                     <connections>
                         <outlet property="featuresCollectionView" destination="Tr8-7v-YyE" id="vCe-Or-sIT"/>
@@ -74,6 +74,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.93455964329999996" green="0.27826410530000001" blue="0.32939210530000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="RZx-wf-Amf" kind="relationship" relationship="viewControllers" id="iBu-oy-UQy"/>
@@ -107,7 +112,7 @@
         <scene sceneID="T3F-EQ-zNl">
             <objects>
                 <navigationController id="RZx-wf-Amf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Timeline" id="MxJ-NF-2at"/>
+                    <tabBarItem key="tabBarItem" title="Timeline" image="clock" catalog="system" id="MxJ-NF-2at"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uQL-UK-eOl">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -122,6 +127,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="clock" catalog="system" width="128" height="121"/>
+        <image name="newspaper" catalog="system" width="128" height="108"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
