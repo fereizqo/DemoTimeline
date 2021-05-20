@@ -9,7 +9,7 @@ import UIKit
 
 class TimelineTableViewController: UITableViewController {
     
-    let offsetTimeline: CGFloat = 40.0
+    let offsetTimeline: CGFloat = 50.0
     let labelTimelineWidthFilled: CGFloat = 60.0
     let labelTimelineWidthEmpty: CGFloat = 50.0
     

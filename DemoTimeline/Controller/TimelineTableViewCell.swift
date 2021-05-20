@@ -14,18 +14,21 @@ class TimelineTableViewCell: UITableViewCell {
     var countRowSection: (row: Int, section:Int)?
     var currentIndexPath = IndexPath()
     
-    let offsetTimeline: CGFloat = 40.0
+    let offsetTimeline: CGFloat = 50.0
+    let offsetCelltoTimeline: CGFloat = 20.0
     let circleRadius: CGFloat = 5.0
     
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var typeCertificateLabel: UILabel!
     @IBOutlet weak var courseNameLabel: UILabel!
     @IBOutlet weak var dateAwardedLabel: UILabel!
+    @IBOutlet weak var leadingCellConstraint: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         self.backgroundColor = UIColor.clear
+        leadingCellConstraint.constant = offsetTimeline + offsetCelltoTimeline
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -38,7 +41,11 @@ class TimelineTableViewCell: UITableViewCell {
         super.draw(rect)
         
         // Create the circle path
-        let circlePath = UIBezierPath(arcCenter: CGPoint(x: offsetTimeline, y: self.bounds.midY), radius: CGFloat(circleRadius), startAngle: CGFloat(0), endAngle: CGFloat(Double.pi * 2), clockwise: true)
+        let circlePath = UIBezierPath(arcCenter: CGPoint(x: offsetTimeline, y: self.bounds.midY),
+                                      radius: CGFloat(circleRadius),
+                                      startAngle: CGFloat(0),
+                                      endAngle: CGFloat(Double.pi * 2),
+                                      clockwise: true)
         
         // Create layer for circle path
         let circleLayer = CAShapeLayer()

@@ -64,6 +64,7 @@
                 <outlet property="backView" destination="Idc-OP-6bd" id="3dY-2R-xn8"/>
                 <outlet property="courseNameLabel" destination="Dgd-4K-kH2" id="C8H-YR-NiS"/>
                 <outlet property="dateAwardedLabel" destination="lYw-eA-Nwd" id="NPm-f1-PhO"/>
+                <outlet property="leadingCellConstraint" destination="Uge-lD-LhS" id="LEi-y7-HRO"/>
                 <outlet property="typeCertificateLabel" destination="rsq-bf-5lM" id="M2l-pz-7MB"/>
             </connections>
             <point key="canvasLocation" x="-174" y="38"/>
