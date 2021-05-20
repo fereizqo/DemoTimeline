@@ -12,6 +12,8 @@ class TimelineTableViewController: UITableViewController {
     let offsetTimeline: CGFloat = 40.0
     let labelTimelineWidthFilled: CGFloat = 60.0
     let labelTimelineWidthEmpty: CGFloat = 50.0
+    
+    let sectionHeaderHeight: CGFloat = 50.0
     let labelTimelineHeightFilled: CGFloat = 30.0
     let labelTimelineHeightEmpty: CGFloat = 25.0
     
@@ -82,14 +84,13 @@ class TimelineTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         // Return the height of header sectionn
-        return 45
-//        return headerTimelineHeight
+        return sectionHeaderHeight
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         // Create header view
-        let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 50))
-        headerView.backgroundColor = .brown
+        let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: sectionHeaderHeight))
+//        headerView.backgroundColor = .brown
         
         // Create year label
         let label = UILabel()
@@ -100,13 +101,19 @@ class TimelineTableViewController: UITableViewController {
         
         if courseGrouped[section].value.isEmpty {
             // Year label style without course data
-            label.frame = CGRect.init(x: offsetTimeline - (0.5*labelTimelineWidthEmpty), y: 5, width: labelTimelineWidthEmpty, height: headerView.frame.height-25)
+            label.frame = CGRect.init(x: offsetTimeline - (0.5*labelTimelineWidthEmpty),
+                                      y: (sectionHeaderHeight - labelTimelineHeightEmpty)*0.5,
+                                      width: labelTimelineWidthEmpty,
+                                      height: labelTimelineHeightEmpty)
             label.font = .boldSystemFont(ofSize: 12)
             label.backgroundColor = UIColor.systemGray5
             label.textColor = UIColor.darkGray
         } else {
             // Year label style with course data
-            label.frame = CGRect.init(x: offsetTimeline - (0.5*labelTimelineWidthFilled), y: 5, width: labelTimelineWidthFilled, height: headerView.frame.height-20)
+            label.frame = CGRect.init(x: offsetTimeline - (0.5*labelTimelineWidthFilled),
+                                      y: (sectionHeaderHeight - labelTimelineHeightFilled)*0.5,
+                                      width: labelTimelineWidthFilled,
+                                      height: labelTimelineHeightFilled)
             label.font = .boldSystemFont(ofSize: 14)
             label.backgroundColor = #colorLiteral(red: 0.9943941236, green: 0.9069606066, blue: 0.9247472882, alpha: 1)
             label.textColor = .black
@@ -122,14 +129,14 @@ class TimelineTableViewController: UITableViewController {
         
         if section == 0 {
             // The line start position at first section
-            startPoint = CGPoint(x: offsetTimeline, y: 25)
+            startPoint = CGPoint(x: offsetTimeline, y: 0.5*sectionHeaderHeight)
         } else {
             // The line start position at other section
-            startPoint = CGPoint(x: offsetTimeline, y: -25)
+            startPoint = CGPoint(x: offsetTimeline, y: -(0.5*sectionHeaderHeight))
         }
         
         // The line end position
-        endPoint = CGPoint(x: offsetTimeline, y: 45)
+        endPoint = CGPoint(x: offsetTimeline, y: sectionHeaderHeight)
         
         // Create the line path
         linePath.move(to: startPoint)
